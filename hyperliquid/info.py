@@ -736,6 +736,22 @@ class Info(API):
     def query_spot_deploy_auction_status(self, user: str) -> Any:
         return self.post("/info", {"type": "spotDeployState", "user": user})
 
+    def query_spot_pair_deploy_auction_status(self) -> Any:
+        """Retrieve information about the Spot Pair Deploy Auction.
+
+        POST /info
+
+        Returns:
+            {
+                startTimeSeconds: int,
+                durationSeconds: int,
+                startGas: float string,
+                currentGas: Optional[float string],
+                endGas: Optional[float string]
+            }
+        """
+        return self.post("/info", {"type": "spotPairDeployAuctionStatus"})
+
     def extra_agents(self, user: str) -> Any:
         """Retrieve extra agents associated with a user.
 

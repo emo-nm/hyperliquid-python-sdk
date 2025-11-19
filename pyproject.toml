@@ -3,6 +3,23 @@
 requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+# PEP 621 project metadata (for uv compatibility)
+[project]
+name = "hyperliquid-python-sdk"
+version = "0.20.1"
+description = "SDK for Hyperliquid API trading with Python."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "eth-utils>=2.1.0,<6.0.0",
+    "eth-account>=0.10.0,<0.14.0",
+    "websocket-client>=1.5.1",
+    "requests>=2.31.0",
+    "msgpack>=1.0.5",
+    "web3>=7.14.0",
+    "python-dotenv>=1.2.1",
+]
+
 [tool.poetry]
 name = "hyperliquid-python-sdk"
 version = "0.21.0"
